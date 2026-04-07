@@ -24,10 +24,6 @@ nav a {
     font-weight: bold;
 }
 
-nav a:hover {
-    color: yellow;
-}
-
 main {
     padding: 20px;
 }
