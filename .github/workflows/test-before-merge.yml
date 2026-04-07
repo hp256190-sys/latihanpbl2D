@@ -13,12 +13,19 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Install HTMLHint & Stylelint
-        run: |
-          npm install -g htmlhint stylelint
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
 
-      - name: Periksa HTML
+      - name: Install Dependencies
+        run: |
+          npm install -g htmlhint
+          npm install -g stylelint
+          npm install -g stylelint-config-standard
+
+      - name: Cek HTML
         run: htmlhint "**/*.html"
 
-      - name: Periksa CSS
+      - name: Cek CSS
         run: stylelint "**/*.css"
